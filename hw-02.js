@@ -70,7 +70,7 @@ users.filter(user => user.age > 18)
 что свойство fullName объекта person было изменено соответствующим образом.
 * */
 
-console.log(person, "John из предыдущего примера")
+console.log(person, "John from 8.7.1")
 
 const setFullName = function (fullName) {
     this.fullName = fullName;
@@ -96,7 +96,10 @@ const numbers = [
     17, 10, 18, 19, 0, 20
 ];
 
-const uniqueNumbersSet = new Set(numbers);
-const uniqueNumbersSorted = Array.from(uniqueNumbersSet).sort((a, b) => a - b);
 
-console.log(uniqueNumbersSorted, "Отсортированный массив с уникальными числами");
+const getSortedUniqueNumbers = (array) => {
+    const uniqueNumbersSet = new Set(array);
+    return Array.from(uniqueNumbersSet).sort((a, b) => a - b);
+}
+
+console.log(getSortedUniqueNumbers(numbers), "Unique & sorted numbers");
